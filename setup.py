@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.0'
+version = '0.1'
 
 name = 'plone.recipe.lxml'
 
@@ -14,13 +14,12 @@ default = plone.recipe.lxml:Recipe
 setup(name=name, 
       version=version,
       long_description="""\
-        This recipe creates a lxml egg and builds libxml2 and libxslt dependencies from source.
+        This buildout recipe creates a lxml egg and builds libxml2 and libxslt dependencies from source.
         
-        If you download it to directory 'src/lxml' you can use it with a part like this:
+        If you can use it with a part like this:
 
         [buildout]
         parts = lxml 
-        develop =  src/lxml
         eggs = 
             lxml == 1.3
 
@@ -50,12 +49,13 @@ setup(name=name,
           "Framework :: Plone",
           "Framework :: Zope2",
           "Programming Language :: Python", 
-          ], 
-      keywords='',
-      author='Joscha Krutzki',
-      author_email='joka@jokasis.de',
+          "Topic :: Text Processing :: Markup :: XML",
+         ], 
+      keywords='lxml recipe',
+      author='Plone Foundation',
+      author_email='plone-developers@lists.sourceforge.net',
       url='http://svn.plone.org/svn/collective/buildout/plone.recipe.lxml',
-      license='GPL',
+      license='ZPL 2.1',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['plone.recipe'],
       include_package_data=True,
