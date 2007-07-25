@@ -13,10 +13,11 @@ default = plone.recipe.lxml:Recipe
 
 setup(name=name, 
       version=version,
+      description="Buildout recipe that creates a lxml egg"
       long_description="""\
         This buildout recipe creates a lxml egg and builds libxml2 and libxslt dependencies from source.
         
-        If you can use it with a part like this:
+        You can use it with a part like this:
 
         [buildout]
         parts = lxml 
@@ -29,13 +30,16 @@ setup(name=name,
 
         The available options are:    
 
-        egg -- The lxml version you want to use. The default setting ist 'lxml == 1.3'.
+        egg -- The lxml version you want to use. The default setting ist 
+               'lxml == 1.3'.
 
-        libxml2_url -- A URL from which the libxml2 sources can be downloaded. The default setting is
-        'http://xmlsoft.org/sources/libxml2-2.6.29.tar.gz'.
+        libxml2_url -- A URL from which the libxml2 sources can be downloaded.
+                       The default setting is
+                       'http://xmlsoft.org/sources/libxml2-2.6.29.tar.gz'.
 
-        libxslt_url -- A URL from which libxslt sources can be downloaded. The default setting is
-        'http://xmlsoft.org/sources/libxslt-1.1.21.tar.gz'.     
+        libxslt_url -- A URL from which libxslt sources can be downloaded. 
+                       The default setting is
+                       'http://xmlsoft.org/sources/libxslt-1.1.21.tar.gz'.     
 
         Installation notes:
 
