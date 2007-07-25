@@ -13,7 +13,7 @@ default = plone.recipe.lxml:Recipe
 
 setup(name=name, 
       version=version,
-      description="Buildout recipe that creates a lxml egg"
+      description="Buildout recipe that creates a lxml egg",
       long_description="""\
         This buildout recipe creates a lxml egg and builds libxml2 and libxslt dependencies from source.
         
