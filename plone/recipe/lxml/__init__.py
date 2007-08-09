@@ -90,7 +90,7 @@ class Recipe:
                     else:
                         raise ValueError("Couldn't find configure")
                 
-                system("./configure --prefix=%s %s" % (location, extra_options))
+                system("sh ./configure --prefix=%s %s" % (location, extra_options))
                 system("make")
                 system("make install")
                 
