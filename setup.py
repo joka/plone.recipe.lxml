@@ -15,23 +15,24 @@ setup(name=name,
       version=version,
       description="Buildout recipe that creates a lxml egg",
       long_description="""\
-        This buildout recipe creates a lxml egg and builds libxml2 and libxslt dependencies from source.
+        This buildout recipe creates a lxml egg and builds libxml2 
+        and libxslt dependencies from source.
         
         You can use it with a part like this:
 
         [buildout]
         parts = lxml 
         eggs = 
-            lxml == 1.3
+            lxml == 1.3.3
 
         [lxml]
         recipe=plone.recipe.lxml    
-        egg = lxml == 1.3
+        egg = lxml == 1.3.3
 
         The available options are:    
 
         egg -- The lxml version you want to use. The default setting ist 
-               'lxml == 1.3'.
+               'lxml == 1.3.3'.
 
         libxml2_url -- A URL from which the libxml2 sources can be downloaded.
                        The default setting is

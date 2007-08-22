@@ -27,7 +27,7 @@ class Recipe:
         location = options['location'] 
 
         options.setdefault('include-dirs', 'lxml')
-        options.setdefault('egg', 'lxml == 1.2.1') 
+        options.setdefault('egg', 'lxml == 1.3.3') 
         options.setdefault('include-dirs', location + '/include')
         options.setdefault('rpath', location + '/lib')
 
