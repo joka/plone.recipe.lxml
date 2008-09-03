@@ -43,6 +43,7 @@ class Recipe:
         
         here = os.getcwd()
         
+        old_path = os.getenv('PATH')
         try:
             os.chdir(location)
             
@@ -55,10 +56,12 @@ class Recipe:
             if not WIN32 and self.libxslt_url:
                  self.cmmi(self.libxslt_url, '--without-python --with-libxml-prefix=%s' % location, location)
             
+            os.environ['PATH'] = location + '/bin:' + old_path
             self.egg.install()
 
 
         finally:
+            os.environ['PATH'] = old_path
             os.chdir(here)
 
         return location
