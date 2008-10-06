@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import sys, os
 
 version = '0.3'
 
@@ -23,24 +22,24 @@ setup(name=name,
         [buildout]
         parts = lxml 
         eggs = 
-            lxml == 1.3.3
+            lxml == 2.1.2
 
         [lxml]
         recipe=plone.recipe.lxml    
-        egg = lxml == 1.3.3
+        egg = lxml == 2.1.2
 
         The available options are:    
 
         egg -- The lxml version you want to use. The default setting ist 
-               'lxml == 1.3.3'.
+               'lxml == 2.1.2'.
 
-        libxml2_url -- A URL from which the libxml2 sources can be downloaded.
+        libxml2-url -- A URL from which the libxml2 sources can be downloaded.
                        The default setting is
-                       'http://xmlsoft.org/sources/libxml2-2.6.29.tar.gz'.
+                       'http://xmlsoft.org/sources/libxml2-2.6.32.tar.gz'.
 
-        libxslt_url -- A URL from which libxslt sources can be downloaded. 
+        libxslt-url -- A URL from which libxslt sources can be downloaded. 
                        The default setting is
-                       'http://xmlsoft.org/sources/libxslt-1.1.21.tar.gz'.     
+                       'http://xmlsoft.org/sources/libxslt-1.1.24.tar.gz'.     
 
         Installation notes:
 
