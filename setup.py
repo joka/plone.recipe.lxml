@@ -37,6 +37,7 @@ Options
 
 Example buildout configuration
 ===============================
+::
 
     [buildout]
     parts = lxml 
@@ -46,7 +47,7 @@ Example buildout configuration
     recipe=plone.recipe.lxml    
     egg = lxml == 2.2.6
 
-    
+
 """,
       classifiers=[
           "License :: OSI Approved :: Zope Public License",
