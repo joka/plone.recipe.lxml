@@ -20,9 +20,9 @@ class Recipe:
         self.options = options
 
         self.libxml2_url = options.get(
-            'libxml2-url', 'http://xmlsoft.org/sources/old/libxml2-2.6.32.tar.gz')
+            'libxml2-url', 'http://xmlsoft.org/sources/libxml2-2.7.7.tar.gz')
         self.libxslt_url = options.get(
-            'libxslt-url', 'http://xmlsoft.org/sources/libxslt-1.1.24.tar.gz')
+            'libxslt-url', 'http://xmlsoft.org/sources/libxslt-1.1.26.tar.gz')
 
         options['location'] = os.path.join(
             buildout['buildout']['parts-directory'],
@@ -31,7 +31,7 @@ class Recipe:
         location = options['location']
 
         options.setdefault('include-dirs', 'lxml')
-        options.setdefault('egg', 'lxml == 2.1.2')
+        options.setdefault('egg', 'lxml == 2.2.6')
         options.setdefault('include-dirs', location + '/include')
         options.setdefault('rpath', location + '/lib')
 

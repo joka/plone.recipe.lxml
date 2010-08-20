@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.3'
+version = '0.4'
 
 name = 'plone.recipe.lxml'
 
@@ -12,41 +12,42 @@ default = plone.recipe.lxml:Recipe
 
 setup(name=name, 
       version=version,
-      description="Buildout recipe that creates a lxml egg",
+      description="Recipe that builds lxml and dependencies (libxslt, libxml2).",
       long_description="""\
-        This buildout recipe creates a lxml egg and builds libxml2 
-        and libxslt dependencies from source.
-        
-        You can use it with a part like this:
+Notes
+========
 
-        [buildout]
-        parts = lxml 
-        eggs = 
-            lxml == 2.1.2
+This recipe is only tested with Debian, Gentoo and minitage. The ``z3c.recipe.staticlxml`` 
+recipe is better maintained.
+ 
+Options
+=================
 
-        [lxml]
-        recipe=plone.recipe.lxml    
-        egg = lxml == 2.1.2
+**egg**
+    The desired lxml egg version (like ``lxml==2.2.6``).
 
-        The available options are:    
+**libxslt-url**
+    The URL to download the libxslt tarballe, the default value is:
+    'http://xmlsoft.org/sources/libxslt-1.1.26.tar.gz'
 
-        egg -- The lxml version you want to use. The default setting ist 
-               'lxml == 2.1.2'.
+**libxml2-url**
+    The URL to download the libxml2 tarball, the default value is:
+    'http://xmlsoft.org/sources/libxml2-2.7.7.tar.gz'
 
-        libxml2-url -- A URL from which the libxml2 sources can be downloaded.
-                       The default setting is
-                       'http://xmlsoft.org/sources/libxml2-2.6.32.tar.gz'.
 
-        libxslt-url -- A URL from which libxslt sources can be downloaded. 
-                       The default setting is
-                       'http://xmlsoft.org/sources/libxslt-1.1.24.tar.gz'.     
+Example buildout configuration
+===============================
 
-        Installation notes:
+    [buildout]
+    parts = lxml 
+    eggs = lxml == 2.2.6
 
-        The lxml egg is not build with buildout in offline mode.
-        This recipe does not work with windows.
+    [lxml]
+    recipe=plone.recipe.lxml    
+    egg = lxml == 2.2.6
 
-        """,
+    
+""",
       classifiers=[
           "License :: OSI Approved :: Zope Public License",
           "Framework :: Buildout",
@@ -56,8 +57,8 @@ setup(name=name,
           "Topic :: Text Processing :: Markup :: XML",
          ], 
       keywords='lxml recipe',
-      author='Plone Foundation',
-      author_email='plone-developers@lists.sourceforge.net',
+      author='Joscha Krutzki',
+      author_email='joka at jokasis de',
       url='http://svn.plone.org/svn/collective/buildout/plone.recipe.lxml',
       license='ZPL 2.1',
       packages=find_packages(exclude=['ez_setup']),
